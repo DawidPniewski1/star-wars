@@ -6,7 +6,7 @@ import { ICharacter } from 'src/character/types/iCharacter';
 export class Episode implements IEpisode {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-  @Column()
+  @Column({ unique: true })
   name: string;
 
   characters: ICharacter[];

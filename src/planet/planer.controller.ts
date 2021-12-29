@@ -18,17 +18,17 @@ import {
 export class PlanetController {
   constructor(private planetService: PlanetService) {}
 
-  @Post('add')
+  @Post()
   async addPlanet(@Body() add: PlanetAdd): Promise<Planet> {
     return await this.planetService.addPlanet(add);
   }
 
-  @Put('/edit/:planetId')
+  @Put(':planetId')
   async editPlanet(@Param('planetId') id: string, @Body() edit: PlanetEdit) {
     return await this.planetService.editPlanet(id, edit);
   }
 
-  @Delete('delete/:planetId')
+  @Delete(':planetId')
   async deletePlanet(@Param('planetId') id: string) {
     await this.planetService.deletePlanet(id);
   }
