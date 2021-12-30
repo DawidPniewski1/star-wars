@@ -17,7 +17,7 @@ export class Character implements ICharacter {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ unique: true })
   name: string;
 
   @ManyToOne(() => Planet, { cascade: false })

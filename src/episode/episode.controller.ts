@@ -13,7 +13,8 @@ import {
 import { EpisodeService } from './episode.service';
 import { Episode } from './episode.entity';
 import { EpisodeAdd } from './types/episodeAdd';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('episode')
 @Controller('episode')
 export class EpisodeController {
   constructor(private episodeService: EpisodeService) {}

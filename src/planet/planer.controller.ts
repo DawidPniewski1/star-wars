@@ -13,7 +13,9 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('planet')
 @Controller('planet')
 export class PlanetController {
   constructor(private planetService: PlanetService) {}
