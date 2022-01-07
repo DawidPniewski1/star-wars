@@ -1,9 +1,14 @@
+import { PlanetAdd } from './../../planet/types/PlanetAdd';
+import { EpisodeAdd } from './../../episode/types/episodeAdd';
+import { Episode } from './../../episode/episode.entity';
 import { IEpisode } from 'src/episode/types/iEpisode';
-import { IPlanet } from 'src/planet/types/iPlanet';
 import { IsNotEmpty, MaxLength } from 'class-validator';
 import { ICharacter } from './iCharacter';
 import { ApiProperty } from '@nestjs/swagger';
 import { Planet } from 'src/planet/planet.entity';
+import { Ip } from '@nestjs/common';
+import { IPlanet } from 'src/planet/types/iPlanet';
+import { type } from 'os';
 
 export class CharacterAdd implements Omit<ICharacter, 'id'> {
   @IsNotEmpty()
@@ -11,9 +16,9 @@ export class CharacterAdd implements Omit<ICharacter, 'id'> {
   @ApiProperty()
   name: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: () => Planet })
   planet: IPlanet;
 
-  @ApiProperty()
+  @ApiProperty({ type: [Episode] })
   episodes: IEpisode[];
 }

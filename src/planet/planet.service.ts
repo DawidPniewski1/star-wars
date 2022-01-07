@@ -15,13 +15,15 @@ export class PlanetService {
   }
 
   async editPlanet(id: string, edit: PlanetEdit) {
+    if ((await getRepository(Planet).findOne(id)) === undefined)
+      throw new HttpException('Wrong planet id', 404);
     await this.planetUtils.isPlanetNameUniqueEdit(id, edit);
     getRepository(Planet).update(id, edit);
   }
 
   async deletePlanet(id: string) {
-    const planet = await getRepository(Planet).findOne(id);
-    if (!planet) throw new HttpException('Invalid id', 404);
+    if ((await getRepository(Planet).findOne(id)) === undefined)
+      throw new HttpException('Planet not exist', 404);
     getRepository(Planet).delete(id);
   }
 

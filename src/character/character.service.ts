@@ -51,6 +51,8 @@ export class CharacterService {
   }
 
   async deleteCharacter(id: string) {
+    if ((await getRepository(Character).findOne(id)) === undefined)
+      throw new HttpException('CHaracter not exist', 404);
     getRepository(Character).delete(id);
   }
 

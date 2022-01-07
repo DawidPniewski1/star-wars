@@ -20,8 +20,8 @@ export class EpisodeService {
   }
 
   async deleteEpisode(id: string) {
-    const planet = await getRepository(Episode).findOne(id);
-    if (!planet) throw new HttpException('Invalid id', 404);
+    if ((await getRepository(Episode).findOne(id)) === undefined)
+      throw new HttpException('Episode not exist', 404);
     getRepository(Episode).delete(id);
   }
 
