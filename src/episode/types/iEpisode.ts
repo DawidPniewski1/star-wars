@@ -1,4 +1,4 @@
-import { ICharacter } from 'src/character/types/iCharacter';
+import { ICharacter } from '../../character/types/iCharacter';
 export interface IEpisode {
   id: string;
   name: string;

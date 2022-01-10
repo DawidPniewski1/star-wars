@@ -1,5 +1,4 @@
-import { Planet } from './../planet/planet.entity';
-import { IPlanet } from 'src/planet/types/iPlanet';
+import { IPlanet } from '../planet/types/iPlanet';
 import {
   Column,
   Entity,
@@ -9,8 +8,9 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { ICharacter } from './types/iCharacter';
-import { IEpisode } from 'src/episode/types/iEpisode';
-import { Episode } from 'src/episode/episode.entity';
+import { IEpisode } from '../episode/types/iEpisode';
+import { Episode } from '../episode/episode.entity';
+import { Planet } from '../planet/planet.entity';
 
 @Entity()
 export class Character implements ICharacter {

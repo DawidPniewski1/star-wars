@@ -5,6 +5,11 @@ import { EpisodeModule } from './episode/episode.module';
 import { PlanetModule } from './planet/planet.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), CharacterModule, EpisodeModule, PlanetModule],
+  imports: [
+    TypeOrmModule.forRoot(),
+    CharacterModule,
+    EpisodeModule,
+    PlanetModule,
+  ],
 })
 export class AppModule {}

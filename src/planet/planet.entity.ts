@@ -1,7 +1,7 @@
 import { IPlanet } from './types/iPlanet';
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { ICharacter } from 'src/character/types/iCharacter';
-import { Character } from 'src/character/character.entity';
+import { ICharacter } from '../character/types/iCharacter';
+import { Character } from '../character/character.entity';
 import { ApiProperty } from '@nestjs/swagger';
 
 @Entity()

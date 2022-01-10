@@ -3,14 +3,22 @@ import { PlanetEdit } from './types/planetEdit';
 import { PlanetUtils } from './planet.utils';
 import { PlanetAdd } from './types/PlanetAdd';
 import { HttpException, Injectable } from '@nestjs/common';
+
+import { getRepository, Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 import { Planet } from './planet.entity';
-import { getRepository } from 'typeorm';
 
 @Injectable()
 export class PlanetService {
   constructor(private planetUtils: PlanetUtils) {}
+
+  async test() {
+    return 'test';
+  }
+
   async addPlanet(add: PlanetAdd): Promise<Planet> {
     await this.planetUtils.isPlanetNameUniqueAdd(add);
+
     return await getRepository(Planet).save(add);
   }
 
@@ -28,6 +36,12 @@ export class PlanetService {
   }
 
   async findAll(pagination: IPagination): Promise<Planet[]> {
+    console.log(
+      getRepository(Planet).find({
+        take: pagination.size,
+        skip: pagination.size * (pagination.page - 1),
+      }),
+    );
     return getRepository(Planet).find({
       take: pagination.size,
       skip: pagination.size * (pagination.page - 1),

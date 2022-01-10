@@ -12,10 +12,9 @@ import {
   Query,
 } from '@nestjs/common';
 import { Character } from './character.entity';
-import { IPagination } from 'src/types/pagination';
+import { IPagination } from '../types/pagination';
 import { FilteredCharacter } from './types/filteredCharacter';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
-import { get } from 'http';
 
 @ApiTags('character')
 @Controller('character')

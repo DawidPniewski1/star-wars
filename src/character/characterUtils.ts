@@ -1,10 +1,10 @@
-import { Character } from 'src/character/character.entity';
-import { Episode } from 'src/episode/episode.entity';
+import { Character } from '../character/character.entity';
+import { Episode } from '../episode/episode.entity';
 import { CharacterAdd } from './types/characterAdd';
 import { HttpException, Injectable } from '@nestjs/common';
 import { getRepository, Not } from 'typeorm';
-import { Planet } from 'src/planet/planet.entity';
 import { CharacterEdit } from './types/characterEdit';
+import { Planet } from '../planet/planet.entity';
 
 @Injectable()
 export class CharacterUtils {

@@ -1,5 +1,5 @@
-import { Episode } from 'src/episode/episode.entity';
-import { Planet } from 'src/planet/planet.entity';
+import { Planet } from '../../planet/planet.entity';
+import { Episode } from '../../episode/episode.entity';
 export interface FilteredCharacter {
   name: string;
   planet: Planet;

@@ -1,15 +1,10 @@
-import { PlanetAdd } from './../../planet/types/PlanetAdd';
-import { EpisodeAdd } from './../../episode/types/episodeAdd';
 import { Episode } from './../../episode/episode.entity';
-import { IEpisode } from 'src/episode/types/iEpisode';
+import { IEpisode } from '../../episode/types/iEpisode';
 import { IsNotEmpty, MaxLength } from 'class-validator';
 import { ICharacter } from './iCharacter';
 import { ApiProperty } from '@nestjs/swagger';
-import { Planet } from 'src/planet/planet.entity';
-import { Ip } from '@nestjs/common';
-import { IPlanet } from 'src/planet/types/iPlanet';
-import { type } from 'os';
-
+import { IPlanet } from '../../planet/types/iPlanet';
+import { Planet } from '../../planet/planet.entity';
 export class CharacterAdd implements Omit<ICharacter, 'id'> {
   @IsNotEmpty()
   @MaxLength(50)

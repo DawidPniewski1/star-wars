@@ -2,7 +2,6 @@ import { IPagination } from './../types/pagination';
 import { PlanetEdit } from './types/planetEdit';
 import { PlanetService } from './planet.service';
 import { PlanetAdd } from './types/PlanetAdd';
-import { Planet } from './planet.entity';
 import {
   Body,
   Controller,
@@ -13,17 +12,18 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
-import {
-  ApiBody,
-  ApiCreatedResponse,
-  ApiResponse,
-  ApiTags,
-} from '@nestjs/swagger';
+import { ApiBody, ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
+import { Planet } from './planet.entity';
 
 @ApiTags('planet')
 @Controller('planet')
 export class PlanetController {
   constructor(private planetService: PlanetService) {}
+
+  @Get('test')
+  async test(): Promise<String> {
+    return 'test';
+  }
 
   @Post()
   @ApiBody({ type: PlanetAdd })

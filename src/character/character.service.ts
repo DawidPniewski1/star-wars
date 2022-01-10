@@ -1,14 +1,11 @@
 import { FilteredCharacter } from './types/filteredCharacter';
-import { Planet } from 'src/planet/planet.entity';
-import { Episode } from 'src/episode/episode.entity';
 import { CharacterEdit } from './types/characterEdit';
-import { createQueryBuilder, getConnection, getRepository, Not } from 'typeorm';
+import { getConnection, getRepository } from 'typeorm';
 import { CharacterAdd } from './types/characterAdd';
 import { Injectable, HttpException } from '@nestjs/common';
 import { Character } from './character.entity';
 import { CharacterUtils } from './characterUtils';
-import { IPagination } from 'src/types/pagination';
-import { skip } from 'rxjs';
+import { IPagination } from '../types/pagination';
 
 @Injectable()
 export class CharacterService {

@@ -4,7 +4,7 @@ import { EpisodeUtils } from './episode.utils';
 import { EpisodeAdd } from './types/episodeAdd';
 import { HttpException, Injectable } from '@nestjs/common';
 import { Episode } from './episode.entity';
-import { IPagination } from 'src/types/pagination';
+import { IPagination } from '../types/pagination';
 
 @Injectable()
 export class EpisodeService {

@@ -1,6 +1,6 @@
 import { IEpisode } from './types/iEpisode';
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { ICharacter } from 'src/character/types/iCharacter';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { ICharacter } from '../character/types/iCharacter';
 import { ApiProperty } from '@nestjs/swagger';
 
 @Entity()
