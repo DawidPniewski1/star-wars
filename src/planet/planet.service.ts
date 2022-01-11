@@ -36,12 +36,6 @@ export class PlanetService {
   }
 
   async findAll(pagination: IPagination): Promise<Planet[]> {
-    console.log(
-      getRepository(Planet).find({
-        take: pagination.size,
-        skip: pagination.size * (pagination.page - 1),
-      }),
-    );
     return getRepository(Planet).find({
       take: pagination.size,
       skip: pagination.size * (pagination.page - 1),
