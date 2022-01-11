@@ -5,6 +5,7 @@ import { ICharacter } from './iCharacter';
 import { ApiProperty } from '@nestjs/swagger';
 import { IPlanet } from '../../planet/types/iPlanet';
 import { Planet } from '../../planet/planet.entity';
+
 export class CharacterAdd implements Omit<ICharacter, 'id'> {
   @IsNotEmpty()
   @MaxLength(50)
@@ -12,8 +13,8 @@ export class CharacterAdd implements Omit<ICharacter, 'id'> {
   name: string;
 
   @ApiProperty({ type: () => Planet })
-  planet: IPlanet;
+  planet?: IPlanet;
 
   @ApiProperty({ type: [Episode] })
-  episodes: IEpisode[];
+  episodes?: IEpisode[];
 }

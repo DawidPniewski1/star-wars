@@ -14,10 +14,10 @@ export class CharacterEdit implements Omit<ICharacter, 'id'> {
   name: string;
 
   @ApiProperty({ type: () => Planet })
-  planet: IPlanet;
+  planet?: IPlanet;
 
   @ApiProperty({ type: [Episode] })
-  episodes: IEpisode[];
+  episodes?: IEpisode[];
 
-  id: string;
+  id?: string;
 }

@@ -1,6 +1,6 @@
 import { Character } from '../character/character.entity';
 import { Episode } from '../episode/episode.entity';
-import { CharacterAdd } from './types/characterAdd';
+import { CharacterAdd } from './types/CharacterAdd';
 import { HttpException, Injectable } from '@nestjs/common';
 import { getRepository, Not } from 'typeorm';
 import { CharacterEdit } from './types/characterEdit';

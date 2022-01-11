@@ -4,6 +4,6 @@ export interface ICharacter {
   id: string;
   name: string;
 
-  planet: IPlanet;
-  episodes: IEpisode[];
+  planet?: IPlanet;
+  episodes?: IEpisode[];
 }

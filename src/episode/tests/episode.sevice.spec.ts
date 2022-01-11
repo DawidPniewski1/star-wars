@@ -9,14 +9,14 @@ describe('Character Controller', () => {
   let episodeController: EpisodeController;
 
   beforeEach(async () => {
-    const modulePlanet = await Test.createTestingModule({
+    const moduleEpisode = await Test.createTestingModule({
       controllers: [EpisodeController],
       providers: [EpisodeService, EpisodeUtils],
     }).compile();
 
-    episodeService = modulePlanet.get<EpisodeService>(EpisodeService);
-    episodeUtils = modulePlanet.get<EpisodeUtils>(EpisodeUtils);
-    episodeController = modulePlanet.get<EpisodeController>(EpisodeController);
+    episodeService = moduleEpisode.get<EpisodeService>(EpisodeService);
+    episodeUtils = moduleEpisode.get<EpisodeUtils>(EpisodeUtils);
+    episodeController = moduleEpisode.get<EpisodeController>(EpisodeController);
   });
 
   describe('findAll', () => {

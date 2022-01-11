@@ -1,5 +1,4 @@
 import { CharacterEdit } from './types/characterEdit';
-import { CharacterAdd } from './types/characterAdd';
 import { CharacterService } from './character.service';
 import {
   Body,
@@ -15,6 +14,7 @@ import { Character } from './character.entity';
 import { IPagination } from '../types/pagination';
 import { FilteredCharacter } from './types/filteredCharacter';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
+import { CharacterAdd } from './types/CharacterAdd';
 
 @ApiTags('character')
 @Controller('character')

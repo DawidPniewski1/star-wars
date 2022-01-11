@@ -1,7 +1,7 @@
 import { FilteredCharacter } from './types/filteredCharacter';
 import { CharacterEdit } from './types/characterEdit';
 import { getConnection, getRepository } from 'typeorm';
-import { CharacterAdd } from './types/characterAdd';
+import { CharacterAdd } from './types/CharacterAdd';
 import { Injectable, HttpException } from '@nestjs/common';
 import { Character } from './character.entity';
 import { CharacterUtils } from './characterUtils';
@@ -56,7 +56,6 @@ export class CharacterService {
   async getAllCharacters(
     pagination: IPagination,
   ): Promise<FilteredCharacter[]> {
-    console.log(' ----- DANE ----- heniu ', pagination.size);
     if (pagination.size === undefined || '') pagination.size = 20;
     if (pagination.page === undefined || '') pagination.page = 1;
 
